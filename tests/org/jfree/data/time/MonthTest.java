@@ -30,7 +30,7 @@
  * (C) Copyright 2001-2013, by Object Refinery Limited.
  *
  * Original Author:  David Gilbert (for Object Refinery Limited);
- * Contributor(s):   -;
+ * Contributor(s):   Maciej Pawlaczyk (for Roche Sequencing Solutions);
  *
  * Changes
  * -------
