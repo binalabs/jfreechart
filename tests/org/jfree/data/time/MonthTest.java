@@ -30,7 +30,7 @@
  * (C) Copyright 2001-2013, by Object Refinery Limited.
  *
  * Original Author:  David Gilbert (for Object Refinery Limited);
- * Contributor(s):   -;
+ * Contributor(s):   Maciej Pawlaczyk (for Roche Sequencing Solutions);
  *
  * Changes
  * -------
@@ -49,22 +49,14 @@
 
 package org.jfree.data.time;
 
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Locale;
-import java.util.TimeZone;
-
 import org.jfree.chart.TestUtilities;
-
 import org.jfree.date.MonthConstants;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
+
+import java.util.*;
+
+import static org.jfree.date.SerialDate.DATE_FORMAT_SYMBOLS;
+import static org.junit.Assert.*;
 
 /**
  * Tests for the {@link Month} class.
@@ -223,7 +215,8 @@ public class MonthTest {
 
         // test 3...
         try {
-            month = Month.parseMonth("March 1993");
+            final String[] monthNames = DATE_FORMAT_SYMBOLS.getMonths();
+            month = Month.parseMonth(monthNames[2] + " 1993");
         }
         catch (TimePeriodFormatException e) {
             month = new Month(1, 1900);
